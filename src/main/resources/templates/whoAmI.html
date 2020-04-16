@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Edge Tech Academy First Web Application</title>
+</head>
+<body>
+
+<h2>Eric Couch is teaching about Spring today</h2>
+<table>
+    <tr>
+        <td>Who am I?</td>
+        <td><h3 th:text="${name}">This will be for the name </h3></td>
+    </tr>
+    <tr>
+        <td>Home Town</td>
+        <td><h4 th:text="${homeTown}">home town goes here</h4></td>
+    </tr>
+    <tr>
+        <td>Home State</td>
+        <td><h4 th:text="${state}">state goes here</h4></td>
+    </tr>
+    <tr>
+        <td>What time is it?</td>
+        <td><h4 th:text="${date}">Today </h4></td>
+    </tr>
+</table>
+
+</body>
+</html>

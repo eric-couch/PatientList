@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${school}">Name</title>
+    <style>
+        div {
+            border-radius: 0%;
+            transition: transform 1.0s ease-in-out;
+        }
+
+        div:hover {
+            transform: rotate(450deg);
+        }
+
+        #home {
+            width: 100px;
+            height: 100px;
+            background: url('../images/EdgeTech.png') -120px 0px;
+        }
+    </style>
+</head>
+<body>
+<div id='home'></div>
+<p>This is a simple web page to show data being displayed that came from the Controller</p>
+<p th:text="${school}">Name</p>
+</body>
+
+</html>

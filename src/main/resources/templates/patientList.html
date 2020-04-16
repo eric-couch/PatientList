@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Patient Roster</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal" th:action="@{/patients/search}" method="post">
+        <div>
+            <label>Name:</label>
+            <div><input type="text" name="name"/></div>
+            <label>Temperature:</label>
+            <div><input type="number" name="temp"/></div>
+            <div>
+                <button type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+    <div th:if="${#lists.isEmpty(patients)}">
+        <h2>Nothing found</h2>
+        <h3>Try Again</h3>
+    </div>
+    <div th:if="${not #lists.isEmpty(patients)}">
+        <h3 th:text="'Patient List -- ' + ${patients.size()}"></h3>
+        <table class="blueTable">
+            <thead>
+            <tr>
+                <th>Patient Name</th>
+                <th>Age</th>
+                <th>Temperature</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Well Being</th>
+            </tr>
+            </thead>
+            <tr th:each="patient : ${patients}">
+                <td th:text="${patient.firstName} + ' ' + ${patient.lastName}">Customer Id</td>
+                <td th:text="${patient.age}">Age</td>
+                <td th:text="${patient.temperature}">Temp</td>
+                <td th:text="${patient.height}">Height</td>
+                <td th:text="${patient.weight}">Weight</td>
+                <td th:text="${patient.howYaFeelin}">Wellness</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
